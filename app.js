@@ -1,3 +1,5 @@
+/*
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,11 +58,15 @@ app.use(function(err, req, res, next) {
     });
 });
 
-var port = process.env.PORT || 1337;
+app.listen(process.env.PORT || 1337);
 
+module.exports = app;
+
+*/
+
+var http = require('http')
+var port = process.env.PORT || 1337;
 http.createServer(function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello World\n');
 }).listen(port);
-
-module.exports = app;
